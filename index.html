@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manos & Arte — Manualidades Hechas con Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Manos<span>&</span>Arte</a>
+    <nav>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#productos">Productos</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto" class="btn btn-primary">Quiero mi pieza</a>
+    </nav>
+    <button class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <span class="tag">✦ Hecho a mano en Colombia</span>
+      <h1 class="hero-title">Arte que nace<br>de tus <em>manos</em></h1>
+      <p class="hero-subtitle">Piezas artesanales únicas, creadas con amor y materiales naturales. Cada producto es irrepetible, igual que tú.</p>
+      <div class="hero-actions">
+        <a href="#productos" class="btn btn-primary btn-lg">Ver catálogo</a>
+        <a href="#beneficios" class="btn btn-outline btn-lg">Conocer más</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">+850</div>
+          <div class="stat-label">Piezas vendidas</div>
+        </div>
+        <div>
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Calificación</div>
+        </div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Natural y artesanal</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+  <img src="imagenes/hero.jpg" alt="Pieza artesanal" style="width:100%; height:100%; object-fit:cover; border-radius: 200px 200px 0 0;">
+</div>
+      <div class="hero-badge-float">
+        <strong>+850</strong>
+        clientes felices
+      </div>
+      <div class="hero-badge-float2">🌿 Materiales naturales</div>
+    </div>
+  </section>
+
+  <section class="beneficios" id="beneficios">
+    <p class="section-label">Por qué elegirnos</p>
+    <h2 class="section-title">No son características,<br>son experiencias</h2>
+    <p class="section-sub">Cada decisión que tomamos está pensada para que tu hogar y tu vida sean más bonitos, conscientes y especiales.</p>
+    <div class="beneficios-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">✋</div>
+        <div class="benefit-title">Cada pieza es única</div>
+        <p class="benefit-text">No encontrarás otra igual en el mundo. El trabajo manual garantiza que cada producto tiene su propia personalidad e historia irrepetible.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌿</div>
+        <div class="benefit-title">Cuidas el planeta al comprar</div>
+        <p class="benefit-text">Usamos materiales naturales, biodegradables y de proveedores responsables. Tu compra impacta positivamente al medio ambiente.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎁</div>
+        <div class="benefit-title">El regalo perfecto siempre</div>
+        <p class="benefit-text">Nuestras piezas llegan en empaque artesanal especial. Ideal para regalar en cumpleaños, amor y amistad o simplemente porque sí.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📦</div>
+        <div class="benefit-title">Envío a toda Colombia</div>
+        <p class="benefit-text">Despachamos en 24-48 horas con embalaje especial para proteger cada pieza. Seguimiento en tiempo real de tu pedido.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💬</div>
+        <div class="benefit-title">Personalización sin límites</div>
+        <p class="benefit-text">¿Quieres algo con tus colores favoritos o con un mensaje especial? Podemos crear la pieza de tus sueños hecha solo para ti.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">♻️</div>
+        <div class="benefit-title">Durable y atemporal</div>
+        <p class="benefit-text">No seguimos modas pasajeras. Diseñamos piezas que perduran años y mejoran con el tiempo, como las cosas que realmente importan.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-mid">
+    <div class="cta-mid-text">
+      <p>✦ Oferta de lanzamiento</p>
+      <h2>10% de descuento<br>en tu primera compra</h2>
+    </div>
+    <a href="#contacto" class="btn btn-white btn-lg">Reclamar descuento →</a>
+  </div>
+
+  <section class="producto" id="productos">
+    <p class="section-label">Cómo funciona</p>
+    <h2 class="section-title">De nuestras manos<br>a tu hogar</h2>
+    <div class="producto-grid">
+      <div>
+        <p class="section-sub">Un proceso artesanal cuidadoso, desde la selección de materiales hasta la entrega en tu puerta.</p>
+        <div class="pasos-wrap">
+          <div class="paso">
+            <div class="paso-num">1</div>
+            <div>
+              <div class="paso-title">Elige tu pieza favorita</div>
+              <p class="paso-text">Explora nuestro catálogo y encuentra la manualidad que enamora tu espacio.</p>
+            </div>
+          </div>
+          <div class="paso">
+            <div class="paso-num">2</div>
+            <div>
+              <div class="paso-title">Personalízala a tu gusto</div>
+              <p class="paso-text">Cuéntanos tus colores, medidas o mensaje especial. La hacemos exactamente como la imaginas.</p>
+            </div>
+          </div>
+          <div class="paso">
+            <div class="paso-num">3</div>
+            <div>
+              <div class="paso-title">La creamos con amor</div>
+              <p class="paso-text">Nuestras artesanas trabajan cada detalle a mano entre 3 y 7 días según la complejidad.</p>
+            </div>
+          </div>
+          <div class="paso">
+            <div class="paso-num">4</div>
+            <div>
+              <div class="paso-title">La recibes en tu puerta</div>
+              <p class="paso-text">Empacamos con cuidado y enviamos a toda Colombia con foto previa a tu aprobación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="catalogo-label">Nuestras categorías</p>
+        <div class="catalogo-preview">
+          <div class="cat-card">
+            <img src="imagenes/velas.jpg" alt="Velas aromáticas" class="cat-img">
+            <div class="cat-name">Velas aromáticas</div>
+            <div class="cat-price">Desde $25.000</div>
+        </div>
+          <div class="cat-card">
+             <img src="imagenes/Ramos.jpg" alt="Arreglos decorativos" class="cat-img">
+            <div class="cat-name">Arreglos decorativos</div>
+            <div class="cat-price">Desde $42.000</div>
+        </div>
+          <div class="cat-card">
+             <img src="imagenes/aretes.jpg" alt="Aretes y collares" class="cat-img">
+            <div class="cat-name">Aretes y collares</div>
+            <div class="cat-price">Desde $18.000</div>
+        </div>
+          <div class="cat-card">
+             <img src="imagenes/ceramica.jpg" alt="Cerámica" class="cat-img">
+            <div class="cat-name">Cerámica</div>
+            <div class="cat-price">Desde $55.000</div>
+        </div>
+          <div class="cat-card">
+             <img src="imagenes/jabones.jpg" alt="Jabones naturales" class="cat-img">
+            <div class="cat-name">Jabones naturales</div>
+            <div class="cat-price">Desde $22.000</div>
+        </div>
+          <div class="cat-card">
+             <img src="imagenes/cuadros.jpg" alt="Cuadros tejidos" class="cat-img">
+            <div class="cat-name">Cuadros tejidos</div>
+            <div class="cat-price">Desde $68.000</div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonios" id="testimonios">
+    <p class="section-label">Lo que dicen nuestros clientes</p>
+    <h2 class="section-title">Más de 850 personas<br>ya lo descubrieron</h2>
+    <p class="section-sub">Cada reseña es una historia de amor entre nuestras piezas y los hogares que las recibieron.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">"Las velas son increíbles. El aroma llena toda la habitación y la presentación es tan bonita que da lástima usarlas."</p>
+        <div class="testi-author">
+          <div class="avatar">LP</div>
+          <div><div class="author-name">Laura Pérez</div><div class="author-city">Bogotá, Colombia</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">"Pedí un arreglo decorativo personalizado y quedó exactamente como lo soñé. La atención es de 10 y la calidad increíble."</p>
+        <div class="testi-author">
+          <div class="avatar">VM</div>
+          <div><div class="author-name">Valentina Moreno</div><div class="author-city">Medellín, Colombia</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">"Compré unos aretes para regalar y mis amigas quedaron enamoradas. Ya me pidieron que haga un pedido grupal."</p>
+        <div class="testi-author">
+          <div class="avatar">CR</div>
+          <div><div class="author-name">Camila Rodríguez</div><div class="author-city">Cali, Colombia</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="logos-bar">
+      <p>Mencionados en</p>
+      <div class="logos-row">
+        <div class="logo-pill">El Tiempo</div>
+        <div class="logo-pill">Vogue Colombia</div>
+        <div class="logo-pill">Artesanías de Colombia</div>
+        <div class="logo-pill">Mercado Libre</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-mid2">
+    <p class="cta-mid2-tag">✦ Oferta por tiempo limitado</p>
+    <h2>¿Esperas más para<br>tener algo único?</h2>
+    <p class="cta-mid2-sub">Solo quedan 12 cupos para pedidos personalizados este mes.</p>
+    <div class="countdown-wrap">
+      <div class="count-box"><div class="count-num" id="hours">23</div><div class="count-label">Horas</div></div>
+      <div class="count-box"><div class="count-num" id="mins">59</div><div class="count-label">Minutos</div></div>
+      <div class="count-box"><div class="count-num" id="secs">00</div><div class="count-label">Segundos</div></div>
+    </div>
+    <a href="#contacto" class="btn btn-primary btn-lg">Reservar mi cupo ahora</a>
+  </div>
+
+  <section class="faq" id="faq">
+    <p class="section-label">Preguntas frecuentes</p>
+    <h2 class="section-title">Todo lo que necesitas saber</h2>
+    <p class="section-sub">Respondemos tus dudas antes de que las tengas.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Hacen pedidos personalizados? <span class="faq-icon">+</span></button>
+        <div class="faq-a">¡Sí! Es uno de nuestros servicios favoritos. Puedes elegir colores, tamaños, materiales y agregar mensajes especiales. Solo contáctanos y te asesoramos.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo demora la entrega? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Las piezas del catálogo se despachan en 24-48 horas. Los pedidos personalizados toman entre 5 y 10 días hábiles según la complejidad.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Envían a toda Colombia? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Sí, enviamos a todo el territorio nacional. El costo varía según la ciudad. Envío gratuito en compras mayores a $120.000.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Qué pasa si mi producto llega dañado? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Garantizamos la integridad de cada envío. Si algo llega dañado, te enviamos una pieza nueva sin costo adicional dentro de los 5 días siguientes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Los materiales son realmente naturales? <span class="faq-icon">+</span></button>
+        <div class="faq-a">100%. Usamos cera de soja, hilos de algodón orgánico, arcilla natural y aceites esenciales certificados. Nunca usamos plásticos ni sintéticos.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cómo puedo pagar? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Aceptamos transferencia bancaria, Nequi, Daviplata, PSE y tarjetas de crédito/débito a través de nuestra pasarela segura.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prefooter" id="contacto">
+    <div class="prefooter-text">
+      <p class="section-label">Únete a nuestra comunidad</p>
+      <h2>Recibe inspiración artesanal cada semana</h2>
+      <p class="prefooter-desc">Suscríbete y obtén acceso anticipado a nuevas colecciones, tutoriales exclusivos y un <strong>10% de descuento</strong> en tu primer pedido.</p>
+      <ul class="prefooter-list">
+        <li>✓ Descuento exclusivo para suscriptores</li>
+        <li>✓ Primero en conocer nuevas colecciones</li>
+        <li>✓ Tutoriales y tips de decoración artesanal</li>
+      </ul>
+    </div>
+    <div class="form-wrap">
+      <h3>¿Te interesa una pieza?</h3>
+      <p class="form-intro">Déjanos tus datos y te contactamos en menos de 24 horas.</p>
+      <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+          <span class="form-error" id="error-nombre"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required>
+          <span class="form-error" id="error-email"></span>
+        </div>
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <input type="text" id="ciudad" name="ciudad" placeholder="¿Desde dónde nos escribes?">
+        </div>
+        <div class="form-group">
+          <label for="interes">¿Qué te interesa?</label>
+          <select id="interes" name="interes">
+            <option value="">Selecciona una opción</option>
+            <option value="velas">Velas aromáticas</option>
+            <option value="arreglos">Arreglos decorativos</option>
+            <option value="aretes">Aretes y collares</option>
+            <option value="ceramica">Cerámica</option>
+            <option value="jabones">Jabones naturales</option>
+            <option value="cuadros">Cuadros tejidos</option>
+            <option value="personalizado">Pedido personalizado</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg form-submit">Quiero mi descuento →</button>
+        <p class="form-note">🔒 Tus datos están seguros. No hacemos spam.</p>
+        <div id="form-success" class="form-success">¡Gracias! Te contactamos pronto 🎉</div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo footer-logo">Manos<span>&</span>Arte</a>
+        <p>Creamos piezas artesanales únicas con amor y materiales naturales desde Bogotá, Colombia.</p>
+        <div class="social-links">
+          <a href="#">ig</a>
+          <a href="#">fb</a>
+          <a href="#">tk</a>
+          <a href="#">wa</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="#">Velas aromáticas</a></li>
+          <li><a href="#">Arreglos decorativos</a></li>
+          <li><a href="#">Aretes y collares</a></li>
+          <li><a href="#">Cerámica</a></li>
+          <li><a href="#">Pedidos personalizados</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Nuestra historia</a></li>
+          <li><a href="#">Artesanas</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="#">Envíos y entregas</a></li>
+          <li><a href="#">Devoluciones</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Manos & Arte — Todos los derechos reservados</p>
+      <p>Hecho con ❤️ en Colombia</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
