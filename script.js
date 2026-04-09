@@ -63,19 +63,24 @@ async function handleSubmit(event) {
   submitBtn.textContent = 'Enviando...';
   submitBtn.disabled = true;
 
-  var payload = {
-    fields: [
-      { name: 'firstname', value: nombre.value.trim() },
-      { name: 'email',     value: email.value.trim() },
-      { name: 'city',      value: ciudad.value.trim() },
-      { name: 'message',   value: interes.value }
-    ],
-    context: {
-      pageUri: window.location.href,
-      pageName: document.title
+var payload = {
+  fields: [
+    { name: 'firstname', value: nombre.value.trim() },
+    { name: 'email',     value: email.value.trim() },
+    { name: 'city',      value: ciudad.value.trim() },
+    { name: 'message',   value: interes.value }
+  ],
+  context: {
+    pageUri: window.location.href,
+    pageName: document.title
+  },
+  legalConsentOptions: {
+    consent: {
+      consentToProcess: true,
+      text: 'Acepto el tratamiento de mis datos'
     }
-  };
-
+  }
+};
   try {
     var response = await fetch(
       'https://api.hsforms.com/submissions/v3/integration/submit/51321595/8c16cb76-461b-402f-b9bd-5e69306254ac',
