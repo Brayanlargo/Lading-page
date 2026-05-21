@@ -9,13 +9,13 @@
     var remaining = endTime - Date.now();
     if (remaining < 0) remaining = 0;
 
-    var h = Math.floor(remaining / 3600000);
-    var m = Math.floor((remaining % 3600000) / 60000);
-    var s = Math.floor((remaining % 60000) / 1000);
+    var h = (remaining / 3600000) | 0;
+    var m = ((remaining % 3600000) / 60000) | 0;
+    var s = ((remaining % 60000) / 1000) | 0;
 
-    if (hoursEl) hoursEl.textContent = String(h).padStart(2, '0');
-    if (minsEl)  minsEl.textContent  = String(m).padStart(2, '0');
-    if (secsEl)  secsEl.textContent  = String(s).padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = (h < 10 ? '0' : '') + h;
+    if (minsEl)  minsEl.textContent  = (m < 10 ? '0' : '') + m;
+    if (secsEl)  secsEl.textContent  = (s < 10 ? '0' : '') + s;
   }
 
   update();
@@ -32,9 +32,7 @@ function toggleFaq(button) {
     openItems[i].classList.remove('open');
   }
 
-  if (!isOpen) {
-    item.classList.add('open');
-  }
+  if (!isOpen) item.classList.add('open');
 }
 
 
@@ -46,12 +44,11 @@ async function handleSubmit(event) {
   var ciudad  = document.getElementById('ciudad');
   var interes = document.getElementById('interes');
 
-  var form       = document.getElementById('contactForm');
-  var submitBtn  = form.querySelector('button[type="submit"]');
+  var form      = document.getElementById('contactForm');
+  var submitBtn = form.querySelector('button[type="submit"]');
   var successDiv = document.getElementById('form-success');
 
-  var valid = true;
-
+  // reset errores (más rápido con for loop clásico)
   var errorEls = document.querySelectorAll('.form-error');
   for (var i = 0; i < errorEls.length; i++) {
     errorEls[i].textContent = '';
@@ -62,19 +59,22 @@ async function handleSubmit(event) {
     inputEls[j].style.borderColor = '';
   }
 
+  var valid = true;
+
   if (!nombre.value.trim()) {
     document.getElementById('error-nombre').textContent = 'Por favor ingresa tu nombre.';
     nombre.style.borderColor = '#c0392b';
     valid = false;
   }
 
+  var emailValue = email.value.trim();
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!email.value.trim()) {
+  if (!emailValue) {
     document.getElementById('error-email').textContent = 'Por favor ingresa tu correo.';
     email.style.borderColor = '#c0392b';
     valid = false;
-  } else if (!emailRegex.test(email.value.trim())) {
+  } else if (!emailRegex.test(emailValue)) {
     document.getElementById('error-email').textContent = 'Ingresa un correo válido.';
     email.style.borderColor = '#c0392b';
     valid = false;
@@ -88,12 +88,12 @@ async function handleSubmit(event) {
   var payload = {
     fields: [
       { name: 'firstname', value: nombre.value.trim() },
-      { name: 'email',     value: email.value.trim() },
-      { name: 'city',      value: ciudad.value.trim() },
-      { name: 'message',   value: interes.value }
+      { name: 'email', value: emailValue },
+      { name: 'city', value: ciudad.value.trim() },
+      { name: 'message', value: interes.value }
     ],
     context: {
-      pageUri: window.location.href,
+      pageUri: location.href,
       pageName: document.title
     },
     legalConsentOptions: {
@@ -119,42 +119,41 @@ async function handleSubmit(event) {
       for (var k = 0; k < allFields.length; k++) {
         allFields[k].disabled = true;
       }
-
       successDiv.style.display = 'block';
     } else {
-      var errorData = await response.json();
-      console.error('Error HubSpot:', errorData);
-
       submitBtn.textContent = 'Quiero mi descuento →';
       submitBtn.disabled = false;
-
       alert('Hubo un problema al enviar. Intenta de nuevo.');
     }
   } catch (err) {
-    console.error('Error de red:', err);
-
     submitBtn.textContent = 'Quiero mi descuento →';
     submitBtn.disabled = false;
-
     alert('Error de conexión. Verifica tu internet e intenta de nuevo.');
   }
 }
 
 
+// HEADER scroll optimizado (evita ejecutar DOM style en cada scroll)
 (function headerScroll() {
   var header = document.querySelector('header');
   if (!header) return;
 
+  var lastState = false;
+
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 10) {
-      header.style.boxShadow = '0 2px 16px rgba(45,30,15,0.08)';
-    } else {
-      header.style.boxShadow = 'none';
-    }
-  });
+    var scrolled = window.scrollY > 10;
+
+    if (scrolled === lastState) return;
+    lastState = scrolled;
+
+    header.style.boxShadow = scrolled
+      ? '0 2px 16px rgba(45,30,15,0.08)'
+      : 'none';
+  }, { passive: true });
 })();
 
 
+// SCROLL REVEAL optimizado
 (function scrollReveal() {
   var elements = document.querySelectorAll('.benefit-card, .testi-card, .cat-card, .paso');
   if (!('IntersectionObserver' in window)) return;
@@ -165,13 +164,14 @@ async function handleSubmit(event) {
     elements[i].style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   }
 
-  var observer = new IntersectionObserver(function (entries) {
+  var observer = new IntersectionObserver(function (entries, obs) {
     for (var i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) {
-        var el = entries[i].target;
+      var entry = entries[i];
+      if (entry.isIntersecting) {
+        var el = entry.target;
         el.style.opacity = '1';
         el.style.transform = 'translateY(0)';
-        observer.unobserve(el);
+        obs.unobserve(el);
       }
     }
   }, { threshold: 0.15 });
